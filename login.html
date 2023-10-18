@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>COVID AWARENESS</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
+</head>
+
+<style>
+    span {
+        color: red;
+        z-index: -1;
+        font-size: 11px;
+        margin-left: 15px;
+        background-color: yellow;
+        padding: 10px;
+    }
+</style>
+
+<body>
+    <!DOCTYPE html>
+    <html>
+
+    <head>
+        <title>Slide Navbar</title>
+        <link rel="stylesheet" type="text/css" href="slide navbar style.css">
+        <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+        <div class="main">
+            <input type="checkbox" id="chk" aria-hidden="true">
+            <span id="message">You have attempt more than 3 times try again after 1 hour..</span>
+
+            <div class="signup">
+                <form>
+                    <label for="chk" aria-hidden="true">Sign up</label>
+                    <input type="text" name="txt" placeholder="User name" required="">
+                    <input type="email" name="email" placeholder="Email" required="">
+                    <input type="password" name="pswd" placeholder="Password" required="">
+                    <button>Sign up</button>
+                </form>
+            </div>
+
+            <div class="login">
+                <form>
+                    <label for="chk" aria-hidden="true">Login</label>
+                    <input type="text" id="username" name="email" placeholder="Email" required="">
+                    <input type="password" id="password" name="pswd" placeholder="Password" required="">
+                </form>
+                <button class="btn" id="sumbit" onclick="myFunction()">Login</button>
+            </div>
+        </div>
+
+
+        <script>
+            document.getElementById("message").style.display="none";
+            var a = 3;
+            function myFunction() {
+                var uname = document.getElementById("username").value;
+                var pass = document.getElementById("password").value;
+
+                if (uname == "ananya" && pass == "ananya@12") {
+                    alert("Login Successfully");
+                    window.location.href="index.html";
+                } else {
+                    a--;
+                    alert("Incorrect Username and Password " + " You have " + a + " more attempt..");
+
+                    if (a == 0) {
+                        alert("You attempted More than 3 times Try again after 1hr!");
+                        document.getElementById("sumbit").disabled = true;
+                        document.getElementById("username").disabled = true;
+                        document.getElementById("password").disabled = true;
+                        document.getElementById("message").style.display="block";
+
+
+                    }
+                }
+            }
+        </script>
+    </body>
+
+    </html>
